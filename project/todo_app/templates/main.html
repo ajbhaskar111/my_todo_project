@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Favicon -->
+      <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'dist/icons/bootstrap-icons-1.4.0/bootstrap-icons.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap-docs.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'libs/slick/slick.css' %}" type="text/css" />
+    {% block css_part %}
+
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'dist/css/app.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'dist/icons/themify-icons/themify-icons.css' %}" type="text/css">
+  </head>
+
+  <body   {% if request.path  == '/' or request.path  == '/register-page' or request.path  == '/reset-page' %} class="auth" {% endif %}>
+    {% include "top_sidebar.html" %}
+    {% include "left_sidebar.html" %}
+    <div class="layout-wrapper">
+        {% include "top_header.html" %}
+        {% block main_content %}
+
+        {% endblock %}
+    </div>
+    <script src="{% static 'libs/bundle.js' %}"></script>
+    {% block script_part %}
+
+    {% endblock %}
+    <script src="{% static 'dist/js/app.min.js' %}"></script>
+  </body>
+</html>

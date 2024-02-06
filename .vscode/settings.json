@@ -1,0 +1,6 @@
+{
+    "zenMode.hideStatusBar": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#09090927"
+  }
+}
